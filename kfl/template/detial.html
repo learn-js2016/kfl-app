@@ -1,0 +1,27 @@
+<div ng-include="'template/header.html'"></div>
+
+<div class="container">
+	<ol class="breadcrumb">
+	  <li><a href="#/main">首页</a></li>
+	  <li class="active">详情</li>
+	</ol>
+	<h2 style="border-bottom: 1px solid #ccc; padding-bottom: 20px;">{{dish.name}}</h2>
+	<img src="img/{{dish.img_lg}}" class="img-responsive" style="margin:20px 0;">
+	<div class="container ">
+		<p>
+			<span style="font-weight: bold; ">主要原料：</span>
+			{{dish.material}}
+		</p>
+		<p style="margin-top: 22px 0; border-bottom: 1px solid #ccc; padding-bottom: 22px;">
+			{{dish.detail}}
+		</p>
+		<p style="color: red;">￥{{dish.price}}</p>
+	</div>
+	<div class="btn-group pull-right">
+		<a class="btn btn-success no-outline" style="margin-right: 15px; outline: 0;" href="#/order/{{dish.did}}">我要订餐</a>
+		<a href="#/main" class="btn btn-warning no-outline" style="margin-right: 15px; outline: 0;">我再看看</a>
+	</div>
+	
+</div>
+
+<div ng-include="'template/footer.html'"></div>

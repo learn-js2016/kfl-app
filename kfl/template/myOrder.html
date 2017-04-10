@@ -1,0 +1,27 @@
+
+<div ng-include="'template/header.html'"></div>
+
+<div class="container">
+	<h2 class="text-center">我的订单</h2>
+	<table class="table table-striped" ng-show="hasOrder" >
+		<tr>
+			<th style="width:13%;">编号</th>
+			<th style="width:25%;">菜品</th>
+			<th style="width:42%;">下单时间</th>
+			<th style="width:20%;">联系人</th>
+		</tr>
+		<tr ng-repeat="order in orders">
+			<td style="vertical-align: middle;">{{order.oid}}</td>
+			<td style="vertical-align: middle;">
+				<img ng-src="img/{{order.img_sm}}" class="img-responsive" />
+			</td>
+			<td style="vertical-align: middle;">{{order.order_time}}</td>
+			<td style="vertical-align: middle;">{{order.user_name}}</td>
+		</tr>
+	</table>
+	<div ng-hide="hasOrder" class="alert alert-danger">
+		请先点单~！
+	</div>
+</div>
+
+<div ng-include="'template/footer.html'"></div>

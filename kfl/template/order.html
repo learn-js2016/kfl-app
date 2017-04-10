@@ -1,0 +1,35 @@
+<div ng-include="'template/header.html'"></div>
+
+<div class="container">
+	<div class="alert-info alert" ng-hide="msg == ''">
+		提示信息：{{msg}} 不能为空!
+	</div>
+	<div style="padding: 12px; border: 1px solid #ccc;">
+		<form class="form">
+			<div class="form-group">
+				<label for="name"><b>联系人：</b></label>
+				<input ng-model="username" type="text" placeholder="旭旭" id="name" class="form-control">
+			</div>
+			<div class="form-group">
+				<p style="font-weight: bold;">性别：</p>
+				<input id="nan" type="radio" value="男" name="sex" ng-model="sex" /> 
+				<label for="nan" style="margin-left: 5px;">先生</label>
+				<input id="nv" type="radio" value="女" name="sex" style="margin-left: 17px;" ng-model="sex" />
+				 <label for="nv" style="margin-left: 5px;"> 女士</label>
+			</div>
+			<div class="form-group">
+				<label for="tel"><b>联系电话：</b></label>
+				<input type="tel" placeholder="13501234567" id="tel" class="form-control" ng-model="phone"/>
+			</div>
+			<div class="form-group" >
+				<label for="txt"><b>送餐地址：</b></label>
+				<textarea placeholder="万寿路128号" id="txt" class="form-control" rows=4 ng-model="addr"></textarea>
+			</div>
+
+			<button class="btn btn-success form-control" ng-click="orderDish()">确认下单</button>
+		</form>
+	</div>
+	
+</div>
+
+<div ng-include="'template/footer.html'"></div>
